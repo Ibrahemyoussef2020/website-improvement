@@ -1,0 +1,11 @@
+.two-sides.touch{
+    $sectionColor:#00A424;
+    button,a{
+        color: $sectionColor !important;
+    }
+    @include min-width($double-x-large){
+        article{
+            padding-left: 56px !important;
+        }
+    }
+}

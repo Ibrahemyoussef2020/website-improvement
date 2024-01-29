@@ -1,0 +1,39 @@
+.two-sides.new-subscripers{
+    $sectionColor:#EB2891;
+    padding-bottom: 56px;
+    @include min-width($x-large){
+        padding-bottom: 120px;
+     }
+    .container--content{
+        @include min-width($large){
+            flex-direction: row-reverse;
+         }
+    }
+    button,a{
+        color: $sectionColor !important;
+    }
+
+    .plan{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+        margin-bottom: 24px;
+        span{
+            font-size: 20px;
+            font-weight: 500;
+            font-family: $roto;
+            margin-bottom: 12px;
+            display: block;
+            color: $heading-color;
+        }
+        h3{
+            font-size: 16px;
+            font-weight: 400;
+            color: $text-color;
+        }
+
+        @include min-width($x-large){
+            margin-bottom: 66px;
+        }
+    }
+}

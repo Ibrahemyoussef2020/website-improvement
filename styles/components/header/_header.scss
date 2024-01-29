@@ -1,0 +1,108 @@
+.main-header{
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: $offwhite-100;
+    z-index: 1000;
+  .container{
+    color: $success;
+    font-weight: 500;
+    font-family:$roto;
+
+
+    .mobile-header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 16px;
+        padding-bottom: 20px;
+        
+        div{
+            display: flex;
+            align-items: center;
+            gap:20px;
+
+            button{
+              @extend %reset-btn ;
+            }
+        }
+
+        @include min-width($large){
+            display: none;
+        }
+    }
+
+    .pc-header{
+        display: none;
+        justify-content: space-between;
+        padding-top: 24px;
+        padding-bottom: 24px;
+        @include min-width($large){
+            display: flex;
+        }
+
+        nav{
+            display: flex;
+            align-items: center;
+            gap: 74px;
+
+            ul{
+                @extend %reset-list;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 56px;
+
+                a{
+                    @extend %reset-link;
+                    position: relative;
+                 
+                    &::after{
+                        content: '';
+                        position: absolute;
+                        bottom: -4px;
+                        left: 0;
+                        height: 2px;
+                        width: 100%;
+                        display: inline-block;
+                        background:blue;
+                        transition: transform .3s linear;
+                        transform-origin: center left;
+                        transform: scaleX(0);
+                    }
+
+                    &:hover{
+                        &::after{
+                            transform: scaleX(100%);
+                        }
+                    }
+                }
+            }
+        }
+
+       > div{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 56px;
+            button{
+                @extend %reset-btn;
+                color: $success;
+                font-weight: 500;
+                font-family:$roto;
+            }
+
+            div{
+                display: flex;
+                align-items: center;
+                gap: 12px;
+
+                a{
+                    @extend %reset-link;
+                }
+            }
+        }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+%reset-btn{
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+%reset-list{
+    list-style: none;
+    margin-block-start:0;
+    margin-block-end:0;
+    padding-inline-start: 0;
+}
+
+%reset-link{
+    text-decoration: none;
+    color: inherit;
+}
+
+%description{
+    font-size: 16px;
+    line-height: 24px;
+
+    @include min-width($large){
+        font-size: 18px;
+        line-height: 28px;
+    }
+}

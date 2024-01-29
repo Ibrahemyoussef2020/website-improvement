@@ -1,0 +1,33 @@
+/// min-max mixin
+
+@mixin min-width($size){
+    @if $size == $mobile {
+        @content;
+    }
+    @else if $size == $small {
+        @media (min-width:$small_size){@content;}
+    }
+    @else if $size == $medium {
+        @media (min-width:$medium_size){@content;}
+    }
+    @else if $size == $large {
+        @media (min-width:$large_size){@content;}
+    }
+    @else if $size == $x-large {
+        @media (min-width:$x-large_size){@content;}
+    }
+    @else if $size == $double-x-large {
+        @media (min-width:$double-x-large_size){@content;}
+    }
+    @else{
+        @media (min-width:$size){@content;}
+    }
+}
+
+@mixin ability($prop,$value){
+    -webkit-#{$prop} : $value;
+    -moz-#{$prop} : $value;
+    -o-#{$prop} : $value;
+    $prop : $value;
+}
+

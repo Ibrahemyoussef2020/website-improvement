@@ -1,0 +1,221 @@
+.plans{
+    background: #fff;
+
+    padding: 48px 0;
+
+    @include min-width($large){
+        padding: 60px 0 120px;
+    }
+
+
+    .container{
+        h2{
+            font-size: 24px;
+            margin-bottom: 16px;
+            text-align: center;
+            @include min-width($large){
+                font-size: 42px;
+            }
+        }
+        .sub-title{
+            @extend %description;
+            text-align: center;
+            margin-bottom: 40px;
+            color:$success;
+            @include min-width($large){
+                margin-bottom: 64px;
+            }
+        }
+        .plans__track{
+            .plans__thumb{
+                @include min-width($small){
+                    display: flex;
+                    gap: 24px;
+                    justify-content: space-between;
+                    overflow: hidden;
+                    cursor: grab;
+                }
+                @include min-width($large){
+                    gap: 9px !important;
+                }
+
+                article{
+                    $mainColor:#4328EB;
+                    $regularColor:#36485C;
+                    $priceColor:#172026;
+                    $monthColor:#5F7896;
+                    $bgColor:#F5F4FF;
+                        
+                    max-width: 411px;
+                    min-width: 350px;
+                    min-height: 396px;
+
+                    @include min-width($large){
+                        min-width: 411px;
+                    }
+                    
+                    @include min-width($small){
+                        min-height: 412px;
+                    }
+        
+                    &:first-child{
+                        min-height: 332px;
+                    }
+        
+                    padding: 24px 24px 60px 24px;
+                    border-radius: 8px;
+                    background-color: $bgColor;
+                    margin-bottom: 24px;
+                    flex: 1;
+                    position: relative;
+            
+                    h3{
+                        font-size: 18px;
+                        font-weight: 500;
+                        font-family: $roto;
+                        margin-bottom: 12px;
+                        color: var(--mainColor);
+                        @include min-width($small){
+                            font-size: 20px;
+                            margin-bottom: 16px
+                        }
+                    }
+                    .plan__sub-title , .content{
+                        @extend %description;
+                        color: $regularColor;
+                    }
+                    .plan__sub-title,.price{
+                        margin-bottom: 16px;
+                        @include min-width($small){
+                            margin-bottom:32px
+                        }
+                    }
+                    .content{
+                        &.content--one{
+                            margin-bottom: 16px;
+                        }
+            
+                        &.content--two{
+                            margin-bottom: 16px;
+                            @include min-width($small){
+                                margin-bottom:32px;
+                            }
+                        }
+                    }
+                    
+                    .price{
+                        color: $priceColor;
+                        font-size: 24px;
+                        font-weight: 500;
+                        font-family: $roto;
+                        @include min-width($small){
+                            font-size:32px;
+                        }
+                        span{
+                            color: $monthColor;
+                        }
+                    }
+                    ul{
+                        margin-bottom: 16px;
+                        color: $regularColor;
+
+                        li{
+                            position: relative;
+                            padding: 10px 10px 10px 20px;
+                            &:before{
+                                content: url(../../../images/check-plan.png);
+                                position: absolute;
+                                top:12px;
+                                left: -5px;
+                                z-index: 0;
+                                max-width: 5px;
+                            }
+                        }
+                        
+                        li:not(:last-child){
+                            margin-bottom: 8px;
+                        }
+                        @include min-width($small){
+                            &.free{
+                                margin-bottom: 112px;
+                            }
+                        }
+                        @include min-width($small){
+                            margin-bottom:32px;
+                            li:not(:last-child){
+                                margin-bottom: 16px;
+                            }
+                        }
+                    }
+                    a{
+                        @extend %reset-link;
+                        position: absolute;
+                        bottom: 24px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        width:calc(100% - 48px);
+                        max-width: 363px;
+                        display: block;
+                        padding: 14px;
+                        border-radius:4px;
+                        color: #4328EB;
+                        background: #fff;
+                    }
+                }
+                
+                @include min-width($small){
+                    display: flex;
+                    gap: 24px;
+                    justify-content: space-between;
+                    overflow: hidden;
+                    cursor: grab;
+                }
+            }
+        }
+
+        article.in-order{
+            $mainColor:#fff !important;
+            $regularColor:#F4F8FA !important;
+            $priceColor:#fff !important;
+            $monthColor:#fff !important;
+            $bgColor:#4328EB !important;
+
+            transform: translateZ(50px);
+
+            background-color: $bgColor;
+
+            h3{
+                color: $mainColor;
+            }
+
+            .plan__sub-title , .content{
+                color: $regularColor;
+            }
+
+            .price{
+                color: $priceColor;
+                span{
+                    color: $monthColor;
+                }
+            }
+            
+            ul{
+                color: $regularColor;
+
+                li{
+                    &:before{
+                        content: url(../../../images/check-plan-in-order.png) !important;
+                    }
+                }        
+            }
+
+        }
+
+        article:last-child{
+            display: none;
+            @include min-width($small){
+                display: block;
+            }
+        }
+    }
+}

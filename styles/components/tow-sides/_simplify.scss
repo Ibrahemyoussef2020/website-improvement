@@ -1,0 +1,19 @@
+.two-sides.simplify{
+    @include min-width($large){
+        margin-top:120px;
+     }
+    
+    $sectionColor:#0085FF;
+    .container--content{
+        @include min-width($medium){
+            flex-direction: row-reverse;
+         }
+    }
+    button,a{
+        color: $sectionColor !important;
+    }
+
+    .plan{
+        display: flex;
+    }
+}

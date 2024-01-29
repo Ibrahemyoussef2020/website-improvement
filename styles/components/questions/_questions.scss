@@ -1,0 +1,120 @@
+.questions{
+    padding: 48px 0 ;
+    background: #fff;
+
+    @include min-width($large){
+        padding: 120px 0 60px  ;
+    }
+
+    article:has(.hide-answer) .answer {
+        background: red;
+            height: 0;
+        overflow: hidden;
+        
+    }
+
+
+    .container{
+
+        @include min-width($large){
+            display: flex;
+            gap: 80px;
+            .questions__intro{
+                width: 519px;
+                padding-top: 50px;
+            }
+            .questions_articles{
+                width: 737px;
+            }
+        }
+
+         h2 {
+            margin-bottom: 16px;
+            line-height: 22px;
+            font-size: 14px;
+            font-weight: 500;
+            font-family: $roto;
+            color: #EB2891;
+
+            a{
+                @extend %reset-link;
+               
+            }
+        }
+         .sub-title{
+            margin-bottom: 16px;
+            font-size: 24px;
+            line-height: 36px;
+        }
+
+        .questions__content{
+            @extend %description;
+            margin-bottom: 24px;
+        }
+
+        .questions_articles{
+            article{
+                margin-bottom: 16px;
+                background: #E3F1FF;
+                padding: 16px;
+                border-radius: 8px;
+                .article__header{
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 4px;
+                    margin-bottom: 8px;
+
+                    h3{
+                        @extend %description;
+                    }
+
+                    @include min-width($large){
+                        margin-bottom: 16px;
+                    }
+
+                    button{
+                        @extend %reset-btn;
+                    }
+                }
+            }
+            .article__header.show-answer{
+                img:first-child{
+                    display: none;
+                }
+                img:last-child{
+                    display: inline;
+                }
+            }
+            .article__header.hide-answer{
+                img:first-child{
+                    display: inline;
+                }
+                img:last-child{
+                    display: none;
+                }
+            }
+            .answer{
+                @extend %description;
+            }
+        }
+
+        @include min-width($large){
+            h2 {
+                line-height: 24px;
+                font-size: 16px;
+    
+                a{
+                    @extend %reset-link;
+                   
+                }
+            }
+             .sub-title{
+                font-size: 42px;
+                font-weight: 500;
+                line-height: 58px;
+            }
+
+        }
+
+    }
+}

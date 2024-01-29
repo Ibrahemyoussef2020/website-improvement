@@ -1,0 +1,151 @@
+.two-sides{
+    margin-top: 56px;
+
+    picture{
+        text-align: center;
+    }
+
+    @include min-width($large){
+        margin-top: 80px;
+        picture{
+            text-align: start;
+        }
+    }
+
+    .container--title{
+         h2 {
+            margin-bottom: 12px;
+            @extend %description;
+
+            a{
+                @extend %reset-link;
+               
+            }
+        }
+         .sub-title{
+            margin-bottom: 24px;
+            font-size: 24px;
+            line-height: 36px;
+        }
+        @include min-width($large){
+           display: none;
+
+           h2{
+            font-size: 18px;
+           }
+        }
+    }
+
+    .container--content{
+        picture{
+            max-width: 628px;
+            @include ability(aspect-ratio,1);
+            margin-bottom: 24px;
+
+            @include min-width($double-x-large){
+                flex: 1;
+                min-width: 628px;
+            }
+       }
+
+        article{ 
+            max-width: 572px;
+
+            @include min-width($double-x-large){
+                max-width: 628px;
+                min-width: 628px;
+                flex: 1;
+            }
+            
+           h2 , & .sub-title{
+                display: none;
+            }
+
+            h2 {
+                @extend %description;
+
+                margin-bottom: 12px;
+                color: $cyan;
+                a{
+                  @extend %reset-link;
+                }
+            }
+            .sub-title , .two-sides__intro , ul{
+                margin-bottom: 24px;
+               
+            }
+            .sub-title{
+                font-size: 42px;
+                line-height: 58px;
+                max-width: 450px;
+            }
+            .two-sides__intro , ul{
+                @extend %description;
+                line-height: 24px;
+            }
+
+            ul{
+                li{
+                    margin-bottom: 20px;
+                    position: relative;
+                    padding-left: 35px;
+                    padding-right: 7px;
+
+                    &::before{
+                        content: url(../../../images/check.png);
+                        position: absolute;
+                        top: 0;
+                        left: -5px;
+                    }
+                }
+            }
+
+            .more{
+               @extend %reset-link;
+               @extend %description;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                img{
+                    transition: transform .3s linear;
+                }
+
+                &:hover{
+                    img{
+                        transform: translateX(5px);
+                    }
+                }
+            }
+
+
+            @include min-width($large){
+                padding-right: 2rem;
+
+                 .sub-title , h2 {
+                    display: block;
+                    margin-bottom: 16px;
+                }
+                 .two-sides__intro , ul{
+                    margin-bottom: 32px;
+                    line-height: 28px;
+                }
+                ul{
+                    li{
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+  
+       }
+
+        @include min-width($large){
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           gap: 80px;
+        }
+        @include min-width($double-x-large){
+            gap: 24px;
+         }
+    }
+}

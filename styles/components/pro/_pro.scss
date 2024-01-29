@@ -1,0 +1,103 @@
+.pro{
+    .container{
+        .content{
+            padding: 56px 32px;
+            text-align: center;
+            background: url(../../../images/pro-mob.png);
+            background-size: cover !important;
+            background-position: 50% 50%  !important;
+            border-radius: 16px;
+            min-height: 418px;
+    
+            @include min-width($medium){
+                background: url(../../../images/pro-pc.png);
+                min-height: 492px;
+            }
+            @include min-width($large){
+                padding: 88px 32px;
+            }
+    
+            h2{
+                font-size: 32px;
+                line-height: 40px;
+                margin-bottom: 24px;
+                color: #fff;
+                @include min-width($large){
+                    margin-bottom: 48px;
+                }
+            }
+    
+            p{
+                @extend %description;
+                margin-bottom: 40px;
+                color: #fff;
+                @include min-width($large){
+                    margin-bottom: 56px;
+                }
+            }
+    
+            div{
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                font-weight: 500;
+                gap:32px 40px;
+                .try{
+                    @extend %reset-link;
+                    color:$danger;
+                    background:#fff;
+                    font-size: 18px;
+                    padding: 16px 32px;
+                    white-space: nowrap;
+                    border-radius: 4px;
+                    border: 2px solid transparent;
+                    transition: all .3s linear;
+                    &:hover{
+                        color: #fff;
+                        background-color:inherit;
+                        border: 2px solid #fff;
+                    }         
+                }
+                .veiw{
+                    @extend %reset-link;
+                    color: #fff;
+                    padding: 0px 12px;
+                    font-size: 16px;
+                    font-family:$roto;
+                    font-weight: 500;
+                    display: flex;
+                    gap: 12px;
+                    align-items: center;
+                    white-space: nowrap;
+    
+                    > span{
+                        width: 26px;
+                        height: 26px;
+                        background: #eee;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        position: relative;
+                        transition: transform .3s linear;
+                    }
+    
+                    &:hover{
+                        span{
+                            transform: translateX(5px);
+                        }
+                    }
+    
+                    @include min-width(390px){
+                        padding: 16px 24px;
+                    }
+                    @include min-width($small){
+                        font-size: 18px;
+                    }
+    
+                }
+            }
+        }
+    }
+    
+}
