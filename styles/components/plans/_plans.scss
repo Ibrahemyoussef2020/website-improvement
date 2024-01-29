@@ -123,7 +123,7 @@
                             position: relative;
                             padding: 10px 10px 10px 20px;
                             &:before{
-                                content: url(../../../images/check-plan.png);
+                                content: url(../images/check-plan.png);
                                 position: absolute;
                                 top:12px;
                                 left: -5px;
@@ -204,7 +204,7 @@
 
                 li{
                     &:before{
-                        content: url(../../../images/check-plan-in-order.png) !important;
+                        content: url(../images/check-plan-in-order.png) !important;
                     }
                 }        
             }

@@ -3,14 +3,14 @@
         .content{
             padding: 56px 32px;
             text-align: center;
-            background: url(../../../images/pro-mob.png);
+            background: url(../images/pro-mob.png);
             background-size: cover !important;
             background-position: 50% 50%  !important;
             border-radius: 16px;
             min-height: 418px;
     
             @include min-width($medium){
-                background: url(../../../images/pro-pc.png);
+                background: url(../images/pro-pc.png);
                 min-height: 492px;
             }
             @include min-width($large){
